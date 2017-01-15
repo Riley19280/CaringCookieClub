@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6db86e21-986d-431a-8d55-507e8b162c56" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9607/CaringCookieClubService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CaringCookieClubService.wsdl" MetadataType="Wsdl" ID="f18d46e8-d5b6-46ef-b522-9c1ccb1a33c6" SourceId="1" SourceUrl="http://localhost:9607/CaringCookieClubService.svc?wsdl" />
+    <MetadataFile FileName="CaringCookieClubService3.xsd" MetadataType="Schema" ID="8dd66d14-6ca6-4a8c-9527-13f89f669ded" SourceId="1" SourceUrl="http://localhost:9607/CaringCookieClubService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CaringCookieClubService2.xsd" MetadataType="Schema" ID="5999a704-e3ce-49e9-ba32-1bf5e1138961" SourceId="1" SourceUrl="http://localhost:9607/CaringCookieClubService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CaringCookieClubService1.xsd" MetadataType="Schema" ID="bfbcc658-df2f-435f-a5be-a763a191d920" SourceId="1" SourceUrl="http://localhost:9607/CaringCookieClubService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CaringCookieClubService.xsd" MetadataType="Schema" ID="5d6bf1e3-98fe-4689-8637-fb04972dc86f" SourceId="1" SourceUrl="http://localhost:9607/CaringCookieClubService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CaringCookieClubService.disco" MetadataType="Disco" ID="7f96c06f-d354-4b69-ba96-26320ed1697a" SourceId="1" SourceUrl="http://localhost:9607/CaringCookieClubService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

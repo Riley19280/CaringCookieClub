@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="CaringCookieClubWCF.CaringCookieClubService" CodeBehind="CaringCookieClubService.svc.cs" %>

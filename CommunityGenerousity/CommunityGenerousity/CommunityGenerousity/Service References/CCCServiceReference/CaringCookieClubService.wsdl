@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CaringCookieClubService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:9607/CaringCookieClubService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:9607/CaringCookieClubService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:9607/CaringCookieClubService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CaringCookieClubWCF" />
+      <xsd:import schemaLocation="http://localhost:9607/CaringCookieClubService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICaringCookieClub_GetActivity_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivity" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetActivity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfile" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_DeleteActivity_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteActivity" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_DeleteActivity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetActivitys_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivitys" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetActivitys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivitysResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_UpdateOrCreateProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrCreateProfile" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_UpdateOrCreateProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrCreateProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_UpdateOrCreatePost_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrCreatePost" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_UpdateOrCreatePost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrCreatePostResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetActivitysAssociatedWithProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivitysAssociatedWithProfile" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetActivitysAssociatedWithProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivitysAssociatedWithProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetActivityCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivityCount" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetActivityCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivityCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetIsFollowing_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIsFollowing" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetIsFollowing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIsFollowingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_Follow_InputMessage">
+    <wsdl:part name="parameters" element="tns:Follow" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_Follow_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FollowResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_UnFollow_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnFollow" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_UnFollow_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnFollowResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetActivitysFromFollowers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivitysFromFollowers" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetActivitysFromFollowers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivitysFromFollowersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetMostPopularActivities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMostPopularActivities" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetMostPopularActivities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMostPopularActivitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetSearchedProfiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSearchedProfiles" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetSearchedProfiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSearchedProfilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetAdmins_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdmins" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetAdmins_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdminsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetComments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComments" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetComments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_AddComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddComment" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_AddComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetRecieviedActivitys_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecieviedActivitys" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_GetRecieviedActivitys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecieviedActivitysResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_SetLastActive_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetLastActive" />
+  </wsdl:message>
+  <wsdl:message name="ICaringCookieClub_SetLastActive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetLastActiveResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICaringCookieClub">
+    <wsdl:operation name="GetActivity">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaringCookieClub/GetActivity" message="tns:ICaringCookieClub_GetActivity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaringCookieClub/GetActivityResponse" message="tns:ICaringCookieClub_GetActivity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaringCookieClub/GetProfile" message="tns:ICaringCookieClub_GetProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaringCookieClub/GetProfileResponse" message="tns:ICaringCookieClub_GetProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteActivity">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaringCookieClub/DeleteActivity" message="tns:ICaringCookieClub_DeleteActivity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaringCookieClub/DeleteActivityResponse" message="tns:ICaringCookieClub_DeleteActivity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitys">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaringCookieClub/GetActivitys" message="tns:ICaringCookieClub_GetActivitys_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaringCookieClub/GetActivitysResponse" message="tns:ICaringCookieClub_GetActivitys_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrCreateProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaringCookieClub/UpdateOrCreateProfile" message="tns:ICaringCookieClub_UpdateOrCreateProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaringCookieClub/UpdateOrCreateProfileResponse" message="tns:ICaringCookieClub_UpdateOrCreateProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrCreatePost">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaringCookieClub/UpdateOrCreatePost" message="tns:ICaringCookieClub_UpdateOrCreatePost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaringCookieClub/UpdateOrCreatePostResponse" message="tns:ICaringCookieClub_UpdateOrCreatePost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitysAssociatedWithProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaringCookieClub/GetActivitysAssociatedWithProfile" message="tns:ICaringCookieClub_GetActivitysAssociatedWithProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaringCookieClub/GetActivitysAssociatedWithProfileResponse" message="tns:ICaringCookieClub_GetActivitysAssociatedWithProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivityCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaringCookieClub/GetActivityCount" message="tns:ICaringCookieClub_GetActivityCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaringCookieClub/GetActivityCountResponse" message="tns:ICaringCookieClub_GetActivityCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIsFollowing">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaringCookieClub/GetIsFollowing" message="tns:ICaringCookieClub_GetIsFollowing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaringCookieClub/GetIsFollowingResponse" message="tns:ICaringCookieClub_GetIsFollowing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Follow">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaringCookieClub/Follow" message="tns:ICaringCookieClub_Follow_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaringCookieClub/FollowResponse" message="tns:ICaringCookieClub_Follow_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnFollow">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaringCookieClub/UnFollow" message="tns:ICaringCookieClub_UnFollow_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaringCookieClub/UnFollowResponse" message="tns:ICaringCookieClub_UnFollow_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitysFromFollowers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaringCookieClub/GetActivitysFromFollowers" message="tns:ICaringCookieClub_GetActivitysFromFollowers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaringCookieClub/GetActivitysFromFollowersResponse" message="tns:ICaringCookieClub_GetActivitysFromFollowers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMostPopularActivities">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaringCookieClub/GetMostPopularActivities" message="tns:ICaringCookieClub_GetMostPopularActivities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaringCookieClub/GetMostPopularActivitiesResponse" message="tns:ICaringCookieClub_GetMostPopularActivities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSearchedProfiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaringCookieClub/GetSearchedProfiles" message="tns:ICaringCookieClub_GetSearchedProfiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaringCookieClub/GetSearchedProfilesResponse" message="tns:ICaringCookieClub_GetSearchedProfiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdmins">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaringCookieClub/GetAdmins" message="tns:ICaringCookieClub_GetAdmins_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaringCookieClub/GetAdminsResponse" message="tns:ICaringCookieClub_GetAdmins_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComments">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaringCookieClub/GetComments" message="tns:ICaringCookieClub_GetComments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaringCookieClub/GetCommentsResponse" message="tns:ICaringCookieClub_GetComments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddComment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaringCookieClub/AddComment" message="tns:ICaringCookieClub_AddComment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaringCookieClub/AddCommentResponse" message="tns:ICaringCookieClub_AddComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecieviedActivitys">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaringCookieClub/GetRecieviedActivitys" message="tns:ICaringCookieClub_GetRecieviedActivitys_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaringCookieClub/GetRecieviedActivitysResponse" message="tns:ICaringCookieClub_GetRecieviedActivitys_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetLastActive">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaringCookieClub/SetLastActive" message="tns:ICaringCookieClub_SetLastActive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaringCookieClub/SetLastActiveResponse" message="tns:ICaringCookieClub_SetLastActive_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICaringCookieClub" type="tns:ICaringCookieClub">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetActivity">
+      <soap:operation soapAction="http://tempuri.org/ICaringCookieClub/GetActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <soap:operation soapAction="http://tempuri.org/ICaringCookieClub/GetProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteActivity">
+      <soap:operation soapAction="http://tempuri.org/ICaringCookieClub/DeleteActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitys">
+      <soap:operation soapAction="http://tempuri.org/ICaringCookieClub/GetActivitys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrCreateProfile">
+      <soap:operation soapAction="http://tempuri.org/ICaringCookieClub/UpdateOrCreateProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrCreatePost">
+      <soap:operation soapAction="http://tempuri.org/ICaringCookieClub/UpdateOrCreatePost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitysAssociatedWithProfile">
+      <soap:operation soapAction="http://tempuri.org/ICaringCookieClub/GetActivitysAssociatedWithProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivityCount">
+      <soap:operation soapAction="http://tempuri.org/ICaringCookieClub/GetActivityCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIsFollowing">
+      <soap:operation soapAction="http://tempuri.org/ICaringCookieClub/GetIsFollowing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Follow">
+      <soap:operation soapAction="http://tempuri.org/ICaringCookieClub/Follow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnFollow">
+      <soap:operation soapAction="http://tempuri.org/ICaringCookieClub/UnFollow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitysFromFollowers">
+      <soap:operation soapAction="http://tempuri.org/ICaringCookieClub/GetActivitysFromFollowers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMostPopularActivities">
+      <soap:operation soapAction="http://tempuri.org/ICaringCookieClub/GetMostPopularActivities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSearchedProfiles">
+      <soap:operation soapAction="http://tempuri.org/ICaringCookieClub/GetSearchedProfiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdmins">
+      <soap:operation soapAction="http://tempuri.org/ICaringCookieClub/GetAdmins" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComments">
+      <soap:operation soapAction="http://tempuri.org/ICaringCookieClub/GetComments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddComment">
+      <soap:operation soapAction="http://tempuri.org/ICaringCookieClub/AddComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecieviedActivitys">
+      <soap:operation soapAction="http://tempuri.org/ICaringCookieClub/GetRecieviedActivitys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetLastActive">
+      <soap:operation soapAction="http://tempuri.org/ICaringCookieClub/SetLastActive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CaringCookieClubService">
+    <wsdl:port name="BasicHttpBinding_ICaringCookieClub" binding="tns:BasicHttpBinding_ICaringCookieClub">
+      <soap:address location="http://localhost:9607/CaringCookieClubService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

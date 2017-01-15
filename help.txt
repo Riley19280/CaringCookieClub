@@ -1,0 +1,53 @@
+The way I'm thinking about doing the login part of this in my projects is:
+
+before login the user requests a login_token from the server. These are generated and stored on the server on request, and probably have a limited lifetime.
+to login the application calculates the hash of the users password, then hashes the password with the login_token to get a value, they then return both the login_token and the combined hash.
+The server checks the login_token is one that it has generated, removing it from its list of valid login_tokens. The server then combines its stored hash of the user's password with the login_token and ensures that it matches the submitted combined token. If it matches you have authenticated your user.
+Advantages of this are that you never store the user's password on the server, the password is never passed in the clear, the password hash is only passed in the clear on account creation (though there may be ways around this), and it should be safe from replay attacks as the login_token is removed from the DB on use.
+
+https://crackstation.net/hashing-security.htm
+
+https://developer.xamarin.com/guides/cross-platform/application_fundamentals/web_services/
+
+https://developer.xamarin.com/guides/cross-platform/application_fundamentals/web_services/walkthrough_working_with_WCF/
+
+http://www.codeproject.com/Articles/837599/Using-Csharp-to-connect-to-and-query-from-a-SQL-da
+
+
+
+7
+down vote
+I'm sure you're comfortable with dealing with user logins, and with communications over SSL, so I'm going to focus on what I think it the more interesting part of the question: how to ensure that your read-only actions - which do not require the user to be authenticated - are only accepted from your own client apps?
+
+Before anything else, there is the downside that fNek hinted at in an earlier answer - your client apps are in the hands of potentially hostile users. They can be examined, their communications inspected, their code disassembled. Nothing I am going to suggest will allow you to guarantee that someone doesn't reverse-engineer your client and abuse your REST API. But it should put a barrier in front of any casual attempts.
+
+Anyway, a common approach is:
+
+The client contains a secret
+When making a request, it concatenates the request parameters with the secrets, and hashes the result
+This hash is sent with the request, and checked by the server
+e.g., imagine a GET request for /products/widgets
+
+Let's say the client secret is "OH_HAI_I_IZ_SECRET"
+
+Concatenate the HTTP verb, and the URL, and the secret:
+
+GET/products/widgetsOH_HAI_I_IZ_SECRET
+And take an SHA-1 hash of that:
+
+4156023ce06aff06777bef3ecaf6d7fdb6ca4e02
+Then send that along, so the request would be for:
+
+GET /products/widgets?hash=4156023ce06aff06777bef3ecaf6d7fdb6ca4e02
+Finally, to prevent someone from at least replaying individual requests, take a timestamp also, and add that to the parameters and the hash. e.g. right now, in Unix time, is 1384987891. Add that to the concatenation:
+
+GET/products/widgetsOH_HAI_I_IZ_SECRET1384987891
+Hash that:
+
+2774561d4e9eb37994d6d71e4f396b85af6cacd1
+And send:
+
+GET /products/widgets?time=1384987891&hash=2774561d4e9eb37994d6d71e4f396b85af6cacd1
+The server will check the hash and also verify that the timestamp is current (e.g. within 5 minutes to allow for clocks not being perfectly in sync)
+
+Warning! Since you're talking about mobile apps, there's a definite risk that someone's phone will have it's clock wrong. Or timezone wrong. Or something. Adding the time to the hash will probably break some legit users, so use that idea with caution.

@@ -1,0 +1,33 @@
+# For detailed explanation of how these config files should be used and created please see the developer guide here:
+#  http://docs.amazonwebservices.com/AWSToolkitVS/latest/UserGuide/tkv-deployment-tool.html
+
+# Edit the parameter line below to set the path to the deployment archive or use
+#     /DDeploymentPackage=value
+# on the awsdeploy.exe command line for more flexibility.
+# DeploymentPackage = <-- path to web deployment archive -->
+
+# Profile name is used to look up AWS access key and secret key
+# from either the SDK credentials store, or the credentials file found at
+# <userhome-directroy>\.aws\credentials. Alternatively the access key and 
+# secret key can be set using the command line parameters /DAWSAccessKey and /DAWSSecretKey.
+AWSProfileName = DEV_Riley
+KeyPair = CCC_EC2
+Region = us-east-1
+StackName = CaringCookieClubWCF
+Template = SingleInstance
+UploadBucket = awsdeployment-us-east-1-025221494343
+
+Container.ApplicationHealthcheckPath = /index.html
+Container.Enable32BitApplications = False
+Container.TargetRuntime = 4.0
+Container.Type = 64bit Windows Server 2012 running IIS 8
+
+Environment.AWSAccessKey = AKIAJERVHTJWUFQGY65A
+Environment.AWSSecretKey = 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
+
+Settings.CreationTimeout = 0
+Settings.RollbackOnFailure = true
+
+Template.InstanceType = t2.micro
+Template.SecurityGroup = default
+
